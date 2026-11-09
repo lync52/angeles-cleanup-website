@@ -1,0 +1,14 @@
+
+# Publish the root directory of the GitHub repository.
+[build]
+  publish = "."
+
+# Basic security headers for the production website.
+[[headers]]
+  for = "/*"
+
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Frame-Options = "SAMEORIGIN"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"

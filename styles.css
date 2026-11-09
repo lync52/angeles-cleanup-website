@@ -1,0 +1,810 @@
+
+/* ==========================================
+   1. GLOBAL COLORS AND WEBSITE SETTINGS
+   Defines the earth-toned branding and
+   consistent spacing used throughout the site.
+   ========================================== */
+
+:root {
+  --forest: #263D32;
+  --deep-forest: #172A23;
+  --tan: #D5B994;
+  --sand: #F2EDE3;
+  --white: #FFFFFF;
+  --charcoal: #30332F;
+  --sage: #899987;
+  --muted: #73776F;
+  --border: #E3DED3;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  color: var(--charcoal);
+  background: var(--white);
+  line-height: 1.7;
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+  line-height: 1.2;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.section-padding {
+  padding: 100px 7%;
+}
+
+.eyebrow {
+  color: var(--sage);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  display: block;
+  margin-bottom: 15px;
+}
+
+
+/* ==========================================
+   2. HEADER AND NAVIGATION
+   Sticky header remains visible when scrolling.
+   ========================================== */
+
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: var(--forest);
+  color: var(--white);
+  box-shadow: 0 3px 15px rgba(0,0,0,0.15);
+}
+
+.nav-container {
+  max-width: 1400px;
+  min-height: 82px;
+  margin: auto;
+  padding: 0 6%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand,
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+
+.brand strong,
+.footer-brand strong {
+  font-weight: 700;
+}
+
+.brand-icon {
+  width: 39px;
+  height: 39px;
+  border: 2px solid var(--tan);
+  color: var(--tan);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 27px;
+}
+
+.main-nav > a:not(.button) {
+  font-size: 0.88rem;
+  transition: color 0.2s;
+}
+
+.main-nav > a:not(.button):hover {
+  color: var(--tan);
+}
+
+.menu-toggle {
+  display: none;
+  border: none;
+  background: transparent;
+  color: white;
+  font-size: 1.7rem;
+  cursor: pointer;
+}
+
+
+/* ==========================================
+   3. BUTTONS
+   Shared styling for all calls to action.
+   ========================================== */
+
+.button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 13px 24px;
+  border-radius: 3px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  transition: all 0.25s ease;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.button-nav,
+.button-primary {
+  background: var(--tan);
+  color: var(--deep-forest);
+}
+
+.button-nav:hover,
+.button-primary:hover {
+  background: #E5CCAA;
+  transform: translateY(-2px);
+}
+
+.button-outline {
+  color: white;
+  border-color: white;
+}
+
+.button-outline:hover {
+  background: white;
+  color: var(--forest);
+}
+
+.button-dark {
+  background: var(--forest);
+  color: white;
+}
+
+.button-dark:hover {
+  background: var(--deep-forest);
+}
+
+
+/* ==========================================
+   4. HERO SECTION
+   Large landscape image and primary headline.
+   ========================================== */
+
+.hero {
+  min-height: 700px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-image:
+    url('images/olympic-mountains.jpg');
+  background-position: center 55%;
+  background-size: cover;
+  color: white;
+  margin-top: 82px;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(19,37,29,0.93),
+      rgba(19,37,29,0.60) 65%,
+      rgba(19,37,29,0.25)
+    );
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 760px;
+  padding: 90px 7%;
+}
+
+.hero .eyebrow {
+  color: var(--tan);
+}
+
+.hero h1 {
+  font-size: clamp(2.7rem, 5vw, 4.7rem);
+  margin-bottom: 25px;
+}
+
+.hero-description {
+  max-width: 650px;
+  font-size: 1.08rem;
+  color: #F0EFE9;
+  margin-bottom: 30px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.hero-trust {
+  display: flex;
+  gap: 22px;
+  flex-wrap: wrap;
+  margin-top: 38px;
+  font-size: 0.82rem;
+  color: #F0EFE9;
+}
+
+
+/* ==========================================
+   5. SECTION HEADINGS
+   Consistent centered section introductions.
+   ========================================== */
+
+.section-heading {
+  max-width: 760px;
+  margin: 0 auto 55px;
+  text-align: center;
+}
+
+.section-heading h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 18px;
+}
+
+.section-heading p {
+  color: var(--muted);
+}
+
+
+/* ==========================================
+   6. CORE SERVICE CARDS
+   Highlights the three primary service areas.
+   ========================================== */
+
+.core-services {
+  background: var(--sand);
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  max-width: 1250px;
+  margin: auto;
+}
+
+.service-card {
+  background: white;
+  padding: 38px 32px;
+  border-bottom: 4px solid var(--tan);
+  transition: transform 0.25s;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+}
+
+.service-number {
+  color: var(--sage);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 25px;
+}
+
+.service-card h3 {
+  font-size: 1.45rem;
+  margin-bottom: 17px;
+}
+
+.service-card p {
+  color: var(--muted);
+  margin-bottom: 24px;
+  font-size: 0.93rem;
+}
+
+.text-link {
+  color: var(--forest);
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.text-link:hover {
+  color: #8A6843;
+}
+
+
+/* ==========================================
+   7. ABOUT US
+   Image and business description in two columns.
+   ========================================== */
+
+.about-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 75px;
+  background: white;
+}
+
+.about-image img {
+  width: 100%;
+  height: 510px;
+  object-fit: cover;
+  border-radius: 3px;
+}
+
+.about-content h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 25px;
+}
+
+.about-content p {
+  color: var(--muted);
+  margin-bottom: 18px;
+}
+
+.about-content .button {
+  margin-top: 12px;
+}
+
+
+/* ==========================================
+   8. DETAILED SERVICE SECTION
+   Organizes individual services by category.
+   ========================================== */
+
+.detailed-services {
+  background: var(--sand);
+}
+
+.service-category {
+  max-width: 1250px;
+  margin: 0 auto 75px;
+  scroll-margin-top: 110px;
+}
+
+.category-heading {
+  max-width: 760px;
+  margin-bottom: 30px;
+}
+
+.category-tag {
+  color: #8A6843;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.category-heading h3 {
+  font-size: 2rem;
+  margin: 12px 0;
+}
+
+.category-heading p {
+  color: var(--muted);
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.detail-card {
+  padding: 28px;
+  background: white;
+  border: 1px solid var(--border);
+}
+
+.detail-card h4 {
+  font-size: 1.05rem;
+  margin-bottom: 12px;
+  color: var(--forest);
+}
+
+.detail-card p {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+
+/* ==========================================
+   9. CALL TO ACTION BANNER
+   Encourages visitors to book service.
+   ========================================== */
+
+.cta-section {
+  background:
+    linear-gradient(
+      rgba(23,42,35,0.91),
+      rgba(23,42,35,0.91)
+    ),
+    url('images/construction-cleanup.jpg') center/cover;
+  padding: 90px 7%;
+  text-align: center;
+  color: white;
+}
+
+.cta-content {
+  max-width: 750px;
+  margin: auto;
+}
+
+.cta-content h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 20px;
+}
+
+.cta-content p {
+  color: #E4E6E0;
+  margin-bottom: 30px;
+}
+
+
+/* ==========================================
+   10. REVIEWS
+   Displays genuine customer testimonials.
+   ========================================== */
+
+.reviews-section {
+  background: white;
+}
+
+.review-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  max-width: 1250px;
+  margin: auto;
+}
+
+.review-card {
+  background: var(--sand);
+  padding: 32px;
+  border-radius: 3px;
+}
+
+.stars {
+  color: #B58C4D;
+  font-size: 1.25rem;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+}
+
+.review-card p {
+  font-style: italic;
+  color: var(--muted);
+  margin-bottom: 20px;
+}
+
+.review-author {
+  font-size: 0.83rem;
+  font-weight: 700;
+  color: var(--forest);
+}
+
+.review-cta {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.review-cta p {
+  margin-bottom: 8px;
+}
+
+
+/* ==========================================
+   11. CONTACT AND BOOKING
+   Equal-sized contact form and CRM booking card.
+   ========================================== */
+
+.contact-section {
+  background: var(--sand);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  max-width: 1100px;
+  margin: auto;
+  align-items: stretch;
+}
+
+.contact-card,
+.booking-card {
+  background: white;
+  padding: 40px;
+  border: 1px solid var(--border);
+}
+
+.contact-card h3,
+.booking-card h3 {
+  font-size: 1.8rem;
+  margin-bottom: 12px;
+}
+
+.contact-card > p,
+.booking-card > p {
+  color: var(--muted);
+  margin-bottom: 25px;
+}
+
+.contact-card form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-card label {
+  font-size: 0.86rem;
+  font-weight: 600;
+  margin: 12px 0 5px;
+}
+
+.contact-card input,
+.contact-card select,
+.contact-card textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--border);
+  background: #FBFAF7;
+  font-family: inherit;
+  font-size: 0.9rem;
+  border-radius: 2px;
+}
+
+.contact-card input:focus,
+.contact-card select:focus,
+.contact-card textarea:focus {
+  outline: 2px solid var(--sage);
+  outline-offset: 1px;
+}
+
+.contact-card textarea {
+  resize: vertical;
+}
+
+.contact-card button {
+  margin-top: 22px;
+}
+
+.booking-card {
+  background: var(--forest);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.booking-card .eyebrow {
+  color: var(--tan);
+}
+
+.booking-card h3 {
+  font-size: 2.1rem;
+}
+
+.booking-card p {
+  color: #E2E7E0;
+}
+
+.booking-card .button {
+  margin-top: 10px;
+}
+
+.booking-icon {
+  font-size: 2rem;
+  color: var(--tan);
+  margin-bottom: 20px;
+}
+
+.booking-note {
+  font-size: 0.78rem;
+  color: #D7DED7;
+  margin-top: 22px;
+}
+
+.hidden-field {
+  display: none !important;
+}
+
+
+/* ==========================================
+   12. FOOTER
+   Contains the business contact information.
+   ========================================== */
+
+.site-footer {
+  background: var(--deep-forest);
+  color: white;
+  padding: 65px 7% 25px;
+}
+
+.footer-content {
+  max-width: 1250px;
+  margin: auto;
+}
+
+.footer-brand {
+  margin-bottom: 22px;
+}
+
+.footer-content > p {
+  max-width: 550px;
+  color: #CFD6CE;
+  margin-bottom: 30px;
+}
+
+.footer-contact {
+  border-top: 1px solid rgba(255,255,255,0.15);
+  padding-top: 25px;
+  margin-bottom: 35px;
+  color: #D6DED5;
+  font-size: 0.9rem;
+}
+
+.footer-contact p {
+  margin-bottom: 15px;
+}
+
+.footer-contact a {
+  color: var(--tan);
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.15);
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  color: #B8C1B8;
+  font-size: 0.8rem;
+}
+
+.footer-bottom a {
+  color: var(--tan);
+}
+
+
+/* ==========================================
+   13. MOBILE RESPONSIVENESS
+   Adjusts the layout for phones and tablets.
+   ========================================== */
+
+@media (max-width: 900px) {
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .main-nav {
+    display: none;
+    position: absolute;
+    top: 82px;
+    left: 0;
+    width: 100%;
+    background: var(--forest);
+    padding: 25px 7%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 18px;
+  }
+
+  .main-nav.active {
+    display: flex;
+  }
+
+  .main-nav .button {
+    width: 100%;
+  }
+
+  .service-grid,
+  .detail-grid,
+  .review-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-section {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .about-image img {
+    height: 400px;
+  }
+}
+
+@media (max-width: 600px) {
+
+  .section-padding {
+    padding: 70px 6%;
+  }
+
+  .nav-container {
+    padding: 0 5%;
+  }
+
+  .brand {
+    font-size: 0.84rem;
+  }
+
+  .hero {
+    min-height: 680px;
+  }
+
+  .hero-content {
+    padding: 65px 6%;
+  }
+
+  .hero h1 {
+    font-size: 2.7rem;
+  }
+
+  .hero-description {
+    font-size: 0.96rem;
+  }
+
+  .hero-trust {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .service-grid,
+  .detail-grid,
+  .review-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-card,
+  .detail-card {
+    padding: 27px;
+  }
+
+  .about-image img {
+    height: 300px;
+  }
+
+  .contact-card,
+  .booking-card {
+    padding: 28px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+  }
+}
