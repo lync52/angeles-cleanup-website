@@ -5,7 +5,13 @@
    consistent spacing used throughout the site.
    ========================================== */
 
+/* Theme selection:
+   Default (no data-theme attribute) = Original Angeles Cleanup palette.
+   Switch themes by adding data-theme="bright", "teal", or "apple"
+   to the opening <html> tag in index.html.
+*/
 :root {
+  /* Original earth-toned palette (default) */
   --forest: #263D32;
   --deep-forest: #172A23;
   --tan: #D5B994;
@@ -15,6 +21,95 @@
   --sage: #899987;
   --muted: #73776F;
   --border: #E3DED3;
+
+  /* Supporting theme colors */
+  --button-hover: #E5CCAA;
+  --link-hover: #8A6843;
+  --input-bg: #FBFAF7;
+  --stars: #B58C4D;
+  --footer-copy: #CFD6CE;
+  --footer-contact: #D6DED5;
+  --footer-bottom: #B8C1B8;
+  --hero-overlay-start: rgba(19,37,29,0.93);
+  --hero-overlay-middle: rgba(19,37,29,0.60);
+  --hero-overlay-end: rgba(19,37,29,0.25);
+  --cta-overlay: rgba(23,42,35,0.91);
+  --mobile-button-hover: #385847;
+}
+
+/* 1. Brighter evergreen */
+:root[data-theme="bright"] {
+  --forest: #28634F;
+  --deep-forest: #1D493A;
+  --tan: #A9D6E5;
+  --sand: #E5EEE6;
+  --white: #FAFCF8;
+  --charcoal: #293630;
+  --sage: #4F896B;
+  --muted: #66756B;
+  --border: #D5E2D7;
+  --button-hover: #8FC4D5;
+  --link-hover: #28634F;
+  --input-bg: #F5F9F5;
+  --stars: #B58C4D;
+  --footer-copy: #D9E8DE;
+  --footer-contact: #D9E8DE;
+  --footer-bottom: #C4D8CB;
+  --hero-overlay-start: rgba(22,55,42,0.93);
+  --hero-overlay-middle: rgba(22,55,42,0.62);
+  --hero-overlay-end: rgba(22,55,42,0.28);
+  --cta-overlay: rgba(29,73,58,0.92);
+  --mobile-button-hover: #1D493A;
+}
+
+/* 2. Teal */
+:root[data-theme="teal"] {
+  --forest: #145B5A;
+  --deep-forest: #104746;
+  --tan: #9BCFC8;
+  --sand: #DCEFED;
+  --white: #F7FBFA;
+  --charcoal: #263C3D;
+  --sage: #278C88;
+  --muted: #607675;
+  --border: #CDE2DF;
+  --button-hover: #B5DED8;
+  --link-hover: #145B5A;
+  --input-bg: #F2F8F7;
+  --stars: #A77C37;
+  --footer-copy: #D4E8E5;
+  --footer-contact: #D4E8E5;
+  --footer-bottom: #BBD6D2;
+  --hero-overlay-start: rgba(12,55,55,0.94);
+  --hero-overlay-middle: rgba(12,55,55,0.64);
+  --hero-overlay-end: rgba(12,55,55,0.28);
+  --cta-overlay: rgba(16,71,70,0.93);
+  --mobile-button-hover: #104746;
+}
+
+/* 3. Minimal, Apple-inspired */
+:root[data-theme="apple"] {
+  --forest: #1D1D1F;
+  --deep-forest: #1D1D1F;
+  --tan: #0071E3;
+  --sand: #F5F5F7;
+  --white: #FFFFFF;
+  --charcoal: #1D1D1F;
+  --sage: #0071E3;
+  --muted: #6E6E73;
+  --border: #D2D2D7;
+  --button-hover: #147CE5;
+  --link-hover: #005BB5;
+  --input-bg: #F5F5F7;
+  --stars: #B58C4D;
+  --footer-copy: #D2D2D7;
+  --footer-contact: #D2D2D7;
+  --footer-bottom: #A1A1A6;
+  --hero-overlay-start: rgba(20,20,22,0.94);
+  --hero-overlay-middle: rgba(20,20,22,0.66);
+  --hero-overlay-end: rgba(20,20,22,0.30);
+  --cta-overlay: rgba(29,29,31,0.93);
+  --mobile-button-hover: #005BB5;
 }
 
 * {
@@ -169,7 +264,7 @@ img {
 
 .button-nav:hover,
 .button-primary:hover {
-  background: #E5CCAA;
+  background: var(--button-hover);
   transform: translateY(-2px);
 }
 
@@ -217,9 +312,9 @@ img {
   background:
     linear-gradient(
       90deg,
-      rgba(19,37,29,0.93),
-      rgba(19,37,29,0.60) 65%,
-      rgba(19,37,29,0.25)
+      var(--hero-overlay-start),
+      var(--hero-overlay-middle) 65%,
+      var(--hero-overlay-end)
     );
 }
 
@@ -337,7 +432,7 @@ img {
 }
 
 .text-link:hover {
-  color: #8A6843;
+  color: var(--link-hover);
 }
 
 
@@ -397,7 +492,7 @@ img {
 }
 
 .category-tag {
-  color: #8A6843;
+  color: var(--link-hover);
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 2px;
@@ -444,8 +539,8 @@ img {
 .cta-section {
   background:
     linear-gradient(
-      rgba(23,42,35,0.91),
-      rgba(23,42,35,0.91)
+      var(--cta-overlay),
+      var(--cta-overlay)
     ),
     url('images/construction-cleanup.jpg') center/cover;
   padding: 90px 7%;
@@ -493,7 +588,7 @@ img {
 }
 
 .stars {
-  color: #B58C4D;
+  color: var(--stars);
   font-size: 1.25rem;
   letter-spacing: 3px;
   margin-bottom: 20px;
@@ -575,7 +670,7 @@ img {
   width: 100%;
   padding: 12px;
   border: 1px solid var(--border);
-  background: #FBFAF7;
+  background: var(--input-bg);
   font-family: inherit;
   font-size: 0.9rem;
   border-radius: 2px;
@@ -660,7 +755,7 @@ img {
 
 .footer-content > p {
   max-width: 550px;
-  color: #CFD6CE;
+  color: var(--footer-copy);
   margin-bottom: 30px;
 }
 
@@ -668,7 +763,7 @@ img {
   border-top: 1px solid rgba(255,255,255,0.15);
   padding-top: 25px;
   margin-bottom: 35px;
-  color: #D6DED5;
+  color: var(--footer-contact);
   font-size: 0.9rem;
 }
 
@@ -686,7 +781,7 @@ img {
   display: flex;
   justify-content: space-between;
   gap: 20px;
-  color: #B8C1B8;
+  color: var(--footer-bottom);
   font-size: 0.8rem;
 }
 
@@ -807,4 +902,69 @@ img {
   .footer-bottom {
     flex-direction: column;
   }
+}
+
+/* =========================================
+   MOBILE FLOATING SCHEDULE SERVICE BUTTON
+   ========================================= */
+
+/* Hidden on desktop */
+.mobile-floating-cta {
+    display: none;
+}
+
+/* Display on mobile devices */
+@media screen and (max-width: 768px) {
+
+    .mobile-floating-cta {
+        display: flex;
+        position: fixed;
+
+        /* Center horizontally */
+        left: 50%;
+        transform: translateX(-50%);
+
+        /* Position near bottom of screen */
+        bottom: calc(20px + env(safe-area-inset-bottom));
+
+        /* Button dimensions */
+        width: calc(100% - 40px);
+        max-width: 400px;
+        min-height: 54px;
+
+        /* Appearance */
+        background-color: var(--forest);
+        color: #FFFFFF;
+        font-family: 'DM Sans', sans-serif;
+        font-size: 16px;
+        font-weight: 700;
+        text-decoration: none;
+
+        /* Center button text */
+        align-items: center;
+        justify-content: center;
+
+        /* Rounded corners and shadow */
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+
+        /* Keep above other website elements */
+        z-index: 9999;
+
+        /* Smooth appearance */
+        transition: background-color 0.2s ease;
+    }
+
+    .mobile-floating-cta:hover {
+        background-color: var(--mobile-button-hover);
+    }
+
+    .mobile-floating-cta:active {
+        transform: translateX(-50%) scale(0.98);
+    }
+
+    /* Prevent button from covering page content */
+    body {
+        padding-bottom: 90px;
+    }
 }
