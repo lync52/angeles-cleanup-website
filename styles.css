@@ -294,7 +294,7 @@ img {
    ========================================== */
 
 .hero {
-  min-height: 700px;
+  min-height: 200px;
   position: relative;
   display: flex;
   align-items: center;
@@ -322,7 +322,7 @@ img {
   position: relative;
   z-index: 1;
   max-width: 760px;
-  padding: 90px 7%;
+  padding: 40px 7%;
 }
 
 .hero .eyebrow {
@@ -925,7 +925,7 @@ img {
         transform: translateX(-50%);
 
         /* Position near bottom of screen */
-        bottom: calc(20px + env(safe-area-inset-bottom));
+        bottom: calc(65px + env(safe-area-inset-bottom));
 
         /* Button dimensions */
         width: calc(100% - 40px);
