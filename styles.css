@@ -294,7 +294,7 @@ img {
    ========================================== */
 
 .hero {
-  min-height: 200px;
+  min-height: 40px;
   position: relative;
   display: flex;
   align-items: center;
@@ -853,11 +853,11 @@ img {
   }
 
   .hero {
-    min-height: 680px;
+    min-height: 40px;
   }
 
   .hero-content {
-    padding: 65px 6%;
+    padding: 25px 6%;
   }
 
   .hero h1 {
